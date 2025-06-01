@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Form | Prilist</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      position: relative;
+      width: 400px;
+      height: 480px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: floatAnimation 5s infinite alternate;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    @keyframes floatAnimation {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .box::before,
+    .box::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 100%;
+      filter: blur(1px);
+      z-index: 1;
+    }
+
+    .box::before {
+      top: 0;
+      left: 0;
+      background: linear-gradient(#fff, #fff, #e3e3e3);
+    }
+
+    .box::after {
+      top: 1px;
+      right: -1px;
+      background: #9d9d9d;
+    }
+
+    .shadow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #eee;
+    }
+
+    .shadow::before,
+    .shadow::after {
+      content: "";
+      position: absolute;
+      background: linear-gradient(rgba(0, 0, 0, 0.075), transparent);
+      transform: skewX(45deg);
+    }
+
+    .shadow::before {
+      top: 0;
+      left: calc(100% + 96px);
+      width: 120%;
+      height: 240%;
+    }
+
+    .shadow::after {
+      bottom: -200%;
+      left: calc(100% + 80px);
+      width: 100%;
+      height: 200%;
+    }
+
+    .cover {
+      position: absolute;
+      top: 0;
+      left: -100px;
+      width: 100px;
+      height: 100px;
+      background: #f0f0f0;
+      z-index: 10;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      background: linear-gradient(#dbdae1, #a3aaba);
+      z-index: 5;
+    }
+
+    .content h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+      text-align: center;
+    }
+
+    .inputBox {
+      position: relative;
+      width: 100%;
+      margin: 15px 0;
+    }
+
+    .inputBox input {
+      width: 100%;
+      padding: 12px 45px 12px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+      outline: none;
+    }
+
+    .inputBox i {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      color: #999;
+      font-size: 16px;
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 12px 25px;
+      border: none;
+      background: #3f51b5;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background: #303f9f;
+    }
+
+    .footer-text {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .footer-text a {
+      color: #3f51b5;
+      text-decoration: none;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="shadow"></div>
+      <div class="cover"></div>
+      <div class="content">
+        <h2><i class="fas fa-user-circle"></i> Login to Prilist</h2>
+        <form>
+          <div class="inputBox">
+            <input type="text" placeholder="Username" required />
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="inputBox">
+            <input type="password" placeholder="Password" required />
+            <i class="fas fa-lock"></i>
+          </div>
+          <button type="submit" class="btn">Login</button>
+        </form>
+        <div class="footer-text">
+          Don't have an account? <a href="#">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
